@@ -17,58 +17,70 @@
       --radius:18px;
     }
 
-    *{box-sizing:border-box;}
+    *{
+      box-sizing:border-box;
+      margin:0;
+      padding:0;
+    }
 
     body{
-      margin:0;
       font-family: system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
       background:var(--bg);
       color:var(--text);
       line-height:1.6;
     }
 
-    a{color:#4fa3ff;text-decoration:none;}
+    a{
+      color:#4fa3ff;
+      text-decoration:none;
+    }
 
     .container{
       max-width:1100px;
       margin:0 auto;
-      padding:20px;
+      padding:16px 20px 32px;
     }
 
-    /* HERO */
+    section{
+      margin-top:42px;
+    }
+
+    /* ---------- HERO ---------- */
+
     .hero{
       display:grid;
-      grid-template-columns:1.1fr 1fr;
+      grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);
       gap:30px;
       align-items:center;
       background:var(--panel);
-      padding:40px;
+      padding:32px 32px 34px;
       border-radius:26px;
     }
 
     .hero h1{
-      font-size:40px;
-      margin:0 0 10px;
+      font-size:2.4rem;
+      margin-bottom:8px;
     }
 
     .hero p{
-      margin:0;
       color:var(--muted);
+      font-size:0.98rem;
     }
 
     .btn{
       display:inline-block;
-      margin-top:20px;
-      padding:10px 18px;
+      margin-top:18px;
+      padding:9px 18px;
       background:var(--accent);
       border-radius:999px;
       color:#fff;
       font-weight:600;
+      font-size:0.95rem;
     }
 
     .hero-img{
       width:100%;
-      height:420px;
+      height:380px;
       border-radius:22px;
       overflow:hidden;
     }
@@ -80,10 +92,11 @@
       display:block;
     }
 
-    /* GENERAL SECTION TITLES & CARDS */
+    /* ---------- HEADERS / CARDS ---------- */
+
     h2{
-      margin:48px 0 14px;
-      font-size:27px;
+      margin:38px 0 10px;
+      font-size:1.7rem;
     }
 
     .muted{color:var(--muted);}
@@ -96,71 +109,78 @@
 
     .grid3{
       display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:18px;
+      grid-template-columns:repeat(3, minmax(0,1fr));
+      gap:16px;
     }
 
-    /* EDUCATION */
+    /* ---------- EDUCATION ---------- */
+
     .edu-row{
       display:flex;
-      gap:18px;
+      gap:16px;
       margin-top:10px;
+      flex-wrap:wrap;
     }
 
     .edu-box{
-      flex:1;
+      flex:1 1 0;
       background:var(--card2);
       border-radius:var(--radius);
-      padding:16px 18px 20px;
+      padding:16px 18px 18px;
     }
 
     .edu-box h3{
-      margin-top:0;
-      margin-bottom:8px;
-      font-size:22px;
+      margin-bottom:6px;
+      font-size:1.15rem;
     }
 
     .edu-grade{
-      font-size:36px;
+      font-size:2.2rem;
       font-weight:800;
       margin-bottom:4px;
     }
 
-    /* INTERNSHIP */
+    /* ---------- INTERNSHIP ---------- */
+
     .intern-grid{
       display:grid;
-      grid-template-columns:repeat(2,1fr);
-      gap:20px;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:18px;
     }
 
     .intern-card{
       background:var(--card);
       border-radius:var(--radius);
-      padding:18px 18px 20px;
+      padding:16px 16px 18px;
       text-align:center;
     }
 
     .intern-card img{
       width:100%;
-      height:260px;
+      height:230px;
       object-fit:cover;
       border-radius:14px;
-      margin-bottom:14px;
+      margin-bottom:12px;
       display:block;
     }
 
-    /* FEATURED PROJECT */
+    /* ---------- FEATURED PROJECT ---------- */
+
     .project{
       display:grid;
-      grid-template-columns:1.05fr 0.95fr;
-      gap:22px;
+      grid-template-columns:minmax(0,1.1fr) minmax(0,0.9fr);
+      gap:20px;
       align-items:stretch;
     }
 
     .project-text{
       background:var(--card);
       border-radius:var(--radius);
-      padding:18px 20px;
+      padding:16px 18px 18px;
+    }
+
+    .project-text h3{
+      margin-bottom:6px;
     }
 
     .project-text ul{
@@ -171,7 +191,7 @@
     .project-img{
       background:var(--card);
       border-radius:var(--radius);
-      padding:28px;
+      padding:22px;
       display:flex;
       align-items:center;
       justify-content:center;
@@ -179,7 +199,7 @@
 
     .project-img-inner{
       width:100%;
-      max-width:460px;
+      max-width:440px;
       border-radius:18px;
       overflow:hidden;
     }
@@ -192,51 +212,48 @@
       border-radius:18px;
     }
 
-    /* ================= CORE COMPETENCIES ================= */
+    /* ---------- CORE COMPETENCIES ---------- */
+
     .competencies-section{
-      margin-top:60px;
+      margin-top:44px;
     }
 
     .comp-panel{
       background:#dedede;
       color:#111;
-      border-radius:28px;
-      padding:38px 40px 44px;
-      max-width:1100px;
-      margin:auto;
+      border-radius:24px;
+      padding:32px 28px 34px;
     }
 
     .sec-title{
       text-align:center;
-      font-size:32px;
+      font-size:1.7rem;
       font-weight:800;
-      margin-bottom:22px; /* reduced white space */
+      margin-bottom:18px;
     }
 
     .comp-layout{
       display:flex;
       align-items:center;
       justify-content:space-between;
-      gap:40px;
+      gap:28px;
     }
 
     .comp-col{
       display:flex;
       flex-direction:column;
-      gap:46px; /* makes upper/lower headings align nicely */
+      gap:26px;
       max-width:260px;
     }
 
     .comp-col h3{
-      font-size:22px;
-      font-weight:700;
-      margin-bottom:6px;
+      font-size:1.1rem;
+      margin-bottom:4px;
     }
 
     .comp-col p{
-      font-size:16px;
-      line-height:1.5;
-      opacity:0.9;
+      font-size:0.94rem;
+      line-height:1.45;
     }
 
     .clover-wrap{
@@ -246,12 +263,12 @@
     }
 
     .clover{
-      width:360px;      /* wider, but not too tall */
-      height:360px;
+      width:320px;
+      height:320px;
       display:grid;
       grid-template-columns:repeat(2,1fr);
       grid-template-rows:repeat(2,1fr);
-      border-radius:38px;
+      border-radius:32px;
       overflow:hidden;
       box-shadow:0 10px 30px rgba(0,0,0,0.25);
       background:#eee;
@@ -264,45 +281,46 @@
       display:block;
     }
 
-    .tl{border-radius:38px 0 0 0;}
-    .tr{border-radius:0 38px 0 0;}
-    .bl{border-radius:0 0 0 38px;}
-    .br{border-radius:0 0 38px 0;}
+    .tl{border-radius:32px 0 0 0;}
+    .tr{border-radius:0 32px 0 0;}
+    .bl{border-radius:0 0 0 32px;}
+    .br{border-radius:0 0 32px 0;}
 
-    /* ========== GATE 2025 ACHIEVEMENT ========== */
+    /* ---------- GATE 2025 ACHIEVEMENT ---------- */
+
     .achievement-section{
-      margin-top:48px;
+      margin-top:44px;
     }
 
     .achievement-panel{
       display:grid;
-      grid-template-columns:1.2fr 1fr;
-      min-height:400px;
+      grid-template-columns:minmax(0,1.15fr) minmax(0,0.85fr);
       background:#0e1117;
-      border-radius:26px;
+      border-radius:24px;
       overflow:hidden;
+      min-height:320px;
     }
 
     .ach-text{
-      padding:46px 56px;
+      padding:32px 34px 34px;
     }
 
     .achievement-panel h4{
-      font-size:22px;
-      margin-bottom:18px;
+      font-size:1.05rem;
+      margin-bottom:12px;
       opacity:0.9;
     }
 
     .gate-title{
-      font-size:64px;
+      font-size:2.8rem;
       font-weight:900;
-      line-height:1.05;
-      margin-bottom:18px;
+      line-height:1.1;
+      margin-bottom:14px;
     }
 
     .ach-text p{
-      font-size:17px;
-      max-width:540px;
+      font-size:0.98rem;
+      max-width:520px;
       line-height:1.55;
       color:var(--muted);
     }
@@ -311,23 +329,24 @@
       display:flex;
       align-items:center;
       justify-content:center;
-      padding:26px;
+      padding:20px;
     }
 
     .ach-image-wrap img{
-      width:460px;       /* more width */
+      width:420px;
       max-width:100%;
-      height:auto;       /* height adjusts automatically */
+      height:auto;
       object-fit:contain;
       border-radius:14px;
       display:block;
     }
 
-    /* CONTACT */
+    /* ---------- CONTACT ---------- */
+
     .contact-grid{
       display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:18px;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:16px;
     }
 
     .contact-box{
@@ -335,11 +354,11 @@
       border-radius:var(--radius);
       padding:16px 18px;
       line-height:1.7;
+      font-size:0.96rem;
     }
 
-    .contact-box a{
-      color:#4fa3ff;
-      text-decoration:none;
+    .contact-box h3{
+      margin-bottom:4px;
     }
 
     .contact-box a:hover{
@@ -348,49 +367,130 @@
 
     footer{
       text-align:center;
-      margin-top:38px;
-      padding:14px 0 10px;
-      font-size:13px;
+      margin-top:30px;
+      padding-top:8px;
+      font-size:0.8rem;
       color:var(--muted);
     }
 
-    /* RESPONSIVE */
-    @media(max-width:980px){
-      .hero,
-      .project,
+    /* ---------- RESPONSIVE: TABLET ---------- */
+
+    @media (max-width:1024px){
+      .hero{
+        grid-template-columns:1fr;
+      }
+
+      .hero-img{
+        height:300px;
+      }
+
+      .project{
+        grid-template-columns:1fr;
+      }
+
+      .intern-grid{
+        grid-template-columns:1fr 1fr;
+      }
+
+      .comp-layout{
+        gap:20px;
+      }
+
+      .clover{
+        width:280px;
+        height:280px;
+      }
+
       .achievement-panel{
         grid-template-columns:1fr;
       }
-      .hero-img{height:260px;}
+
+      .ach-text{
+        text-align:center;
+      }
+
+      .ach-text p{
+        margin:0 auto;
+      }
+
+      .ach-image-wrap img{
+        width:70%;
+      }
+    }
+
+    /* ---------- RESPONSIVE: MOBILE ---------- */
+
+    @media (max-width:768px){
+      .container{
+        padding:12px 14px 26px;
+      }
+
+      .hero{
+        padding:22px 18px 22px;
+        gap:18px;
+      }
+
+      .hero h1{
+        font-size:1.8rem;
+      }
+
+      .hero-img{
+        height:220px;
+      }
+
+      h2{
+        font-size:1.4rem;
+      }
+
+      .grid3{
+        grid-template-columns:1fr;
+      }
+
+      .edu-row{
+        flex-direction:column;
+      }
+
+      .intern-grid{
+        grid-template-columns:1fr;
+      }
+
+      .project{
+        grid-template-columns:1fr;
+      }
+
+      .comp-panel{
+        padding:24px 18px 26px;
+      }
 
       .comp-layout{
         flex-direction:column;
         text-align:center;
       }
+
+      .comp-col{
+        max-width:none;
+        width:100%;
+      }
+
       .clover{
-        width:300px;
-        height:300px;
+        width:240px;
+        height:240px;
       }
 
-      .ach-text{text-align:center;}
-      .ach-image-wrap img{
-        width:70%;
-      }
-
-      .edu-row{flex-direction:column;}
-      .contact-grid{grid-template-columns:1fr;}
-    }
-
-    @media(max-width:720px){
-      .grid3,
-      .intern-grid{
+      .achievement-panel{
         grid-template-columns:1fr;
       }
-      .hero{padding:26px;}
-      .gate-title{font-size:52px;}
-      .clover{
-        width:260px;
-        height:260px;
+
+      .achievement-panel h4{
+        font-size:1rem;
+      }
+
+      .gate-title{
+        font-size:2.2rem;
+      }
+
+      .contact-grid{
+        grid-template-columns:1fr;
       }
     }
   </style>
@@ -417,129 +517,139 @@
   </section>
 
   <!-- SUMMARY -->
-  <h2>Professional Summary</h2>
-  <div class="grid3">
-    <div class="card">
-      <h3>GATE-Qualified Expertise</h3>
-      <p class="muted">
-        M.Tech student at NIT Warangal specializing in Transportation Engineering,
-        qualified in GATE 2025 (Civil Engineering).
-      </p>
-    </div>
-    <div class="card">
-      <h3>Data-Driven Transportation</h3>
-      <p class="muted">
-        Applying machine learning models in pavement stability prediction and
-        urban transportation planning.
-      </p>
-    </div>
-    <div class="card">
-      <h3>Sustainable Infrastructure</h3>
-      <p class="muted">
-        Field exposure and materials testing experience through a PWD internship,
-        focusing on quality control and pavement layers.
-      </p>
-    </div>
-  </div>
-
-  <!-- EDUCATION -->
-  <h2>Education</h2>
-  <div class="edu-row">
-    <div class="edu-box">
-      <h3>M.Tech, Transportation Engineering</h3>
-      <p class="muted">National Institute of Technology (NIT) Warangal</p>
-      <p class="muted">Expected Graduation: July 2027</p>
-      <p class="muted">
-        Focus areas: Urban Transportation Planning, Signal Design, Pavement Analysis,
-        Sustainable Materials and Infrastructure Design.
-      </p>
-    </div>
-    <div class="edu-box">
-      <h3>B.Tech, Civil Engineering</h3>
-      <p class="muted">Rajkiya Engineering College, Azamgarh</p>
-      <p class="muted">Graduated: July 2025</p>
-      <p class="muted">
-        Final Year Project: Machine Learning Based Prediction of Marshall Stability
-        of Waste Modified Asphalt Concrete.
-      </p>
-    </div>
-  </div>
-
-  <div class="edu-row">
-    <div class="edu-box">
-      <div class="edu-grade">92.6%</div>
-      <p class="muted">Class 12th – C.B.S.E. Board</p>
-    </div>
-    <div class="edu-box">
-      <div class="edu-grade">94%</div>
-      <p class="muted">Class 10th – C.B.S.E. Board</p>
-    </div>
-  </div>
-
-  <!-- INTERNSHIP -->
-  <h2>PWD Internship</h2>
-  <div class="intern-grid">
-    <div class="intern-card">
-      <img src="intern-survey.jpg" alt="Surveying">
-      <h3>Field Exposure &amp; Surveying</h3>
-      <p class="muted">
-        Four-week program involving leveling, traversing and cross-section preparation
-        for road alignment and highway projects.
-      </p>
-    </div>
-    <div class="intern-card">
-      <img src="intern-quality.jpg" alt="Quality Control">
-      <h3>Quality Control Support</h3>
-      <p class="muted">
-        Assisted in quality control of construction materials, including soil,
-        aggregate and pavement layers testing.
-      </p>
-    </div>
-  </div>
-
-  <!-- TECHNICAL PROFICIENCIES -->
-  <h2>Key Technical Proficiencies</h2>
-  <div class="grid3">
-    <div class="card">
-      <h3>Civil Engineering Software</h3>
-      <p class="muted">AutoCAD, STAAD Pro, IIT PAVE, MS Excel.</p>
-    </div>
-    <div class="card">
-      <h3>Materials &amp; Testing</h3>
-      <p class="muted">
-        Marshall Stability testing, Asphalt Mix Design, Aggregate &amp; Concrete testing.
-      </p>
-    </div>
-    <div class="card">
-      <h3>Data &amp; Machine Learning</h3>
-      <p class="muted">
-        Regression models, engineering datasets, IBM SPSS and Excel-based analysis.
-      </p>
-    </div>
-  </div>
-
-  <!-- FEATURED PROJECT -->
-  <h2>Featured Project</h2>
-  <div class="project">
-    <div class="project-text">
-      <h3>ML-Based Prediction of Marshall Stability</h3>
-      <p class="muted">
-        Evaluated Sugarcane Bagasse Ash and Reclaimed Aggregates as sustainable
-        alternatives in asphalt concrete and built ML models to predict Marshall Stability.
-      </p>
-      <ul class="muted">
-        <li>Collected experimental data from Marshall Stability tests.</li>
-        <li>Trained supervised ML regression models on mix parameters.</li>
-        <li>Assisted in optimizing mix design and reducing trial iterations.</li>
-      </ul>
-      <p class="muted"><strong>Outcome:</strong> Demonstrated potential for sustainable pavements using waste-modified asphalt mixtures.</p>
-    </div>
-    <div class="project-img">
-      <div class="project-img-inner">
-        <img src="project-graph.jpg" alt="Predicted vs Actual Marshall Stability">
+  <section>
+    <h2>Professional Summary</h2>
+    <div class="grid3">
+      <div class="card">
+        <h3>GATE-Qualified Expertise</h3>
+        <p class="muted">
+          M.Tech student at NIT Warangal specializing in Transportation Engineering,
+          qualified in GATE 2025 (Civil Engineering).
+        </p>
+      </div>
+      <div class="card">
+        <h3>Data-Driven Transportation</h3>
+        <p class="muted">
+          Applying machine learning models in pavement stability prediction and
+          urban transportation planning.
+        </p>
+      </div>
+      <div class="card">
+        <h3>Sustainable Infrastructure</h3>
+        <p class="muted">
+          Field exposure and materials testing experience through a PWD internship,
+          focusing on quality control and pavement layers.
+        </p>
       </div>
     </div>
-  </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section>
+    <h2>Education</h2>
+    <div class="edu-row">
+      <div class="edu-box">
+        <h3>M.Tech, Transportation Engineering</h3>
+        <p class="muted">National Institute of Technology (NIT) Warangal</p>
+        <p class="muted">Expected Graduation: July 2027</p>
+        <p class="muted">
+          Focus areas: Urban Transportation Planning, Signal Design, Pavement Analysis,
+          Sustainable Materials and Infrastructure Design.
+        </p>
+      </div>
+      <div class="edu-box">
+        <h3>B.Tech, Civil Engineering</h3>
+        <p class="muted">Rajkiya Engineering College, Azamgarh</p>
+        <p class="muted">Graduated: July 2025</p>
+        <p class="muted">
+          Final Year Project: Machine Learning Based Prediction of Marshall Stability
+          of Waste Modified Asphalt Concrete.
+        </p>
+      </div>
+    </div>
+
+    <div class="edu-row">
+      <div class="edu-box">
+        <div class="edu-grade">92.6%</div>
+        <p class="muted">Class 12th – C.B.S.E. Board</p>
+      </div>
+      <div class="edu-box">
+        <div class="edu-grade">94%</div>
+        <p class="muted">Class 10th – C.B.S.E. Board</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTERNSHIP -->
+  <section>
+    <h2>PWD Internship</h2>
+    <div class="intern-grid">
+      <div class="intern-card">
+        <img src="intern-survey.jpg" alt="Surveying">
+        <h3>Field Exposure &amp; Surveying</h3>
+        <p class="muted">
+          Four-week program involving leveling, traversing and cross-section preparation
+          for road alignment and highway projects.
+        </p>
+      </div>
+      <div class="intern-card">
+        <img src="intern-quality.jpg" alt="Quality Control">
+        <h3>Quality Control Support</h3>
+        <p class="muted">
+          Assisted in quality control of construction materials, including soil,
+          aggregate and pavement layers testing.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TECHNICAL PROFICIENCIES -->
+  <section>
+    <h2>Key Technical Proficiencies</h2>
+    <div class="grid3">
+      <div class="card">
+        <h3>Civil Engineering Software</h3>
+        <p class="muted">AutoCAD, STAAD Pro, IIT PAVE, MS Excel.</p>
+      </div>
+      <div class="card">
+        <h3>Materials &amp; Testing</h3>
+        <p class="muted">
+          Marshall Stability testing, Asphalt Mix Design, Aggregate &amp; Concrete testing.
+        </p>
+      </div>
+      <div class="card">
+        <h3>Data &amp; Machine Learning</h3>
+        <p class="muted">
+          Regression models, engineering datasets, IBM SPSS and Excel-based analysis.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURED PROJECT -->
+  <section>
+    <h2>Featured Project</h2>
+    <div class="project">
+      <div class="project-text">
+        <h3>ML-Based Prediction of Marshall Stability</h3>
+        <p class="muted">
+          Evaluated Sugarcane Bagasse Ash and Reclaimed Aggregates as sustainable
+          alternatives in asphalt concrete and built ML models to predict Marshall Stability.
+        </p>
+        <ul class="muted">
+          <li>Collected experimental data from Marshall Stability tests.</li>
+          <li>Trained supervised ML regression models on mix parameters.</li>
+          <li>Assisted in optimizing mix design and reducing trial iterations.</li>
+        </ul>
+        <p class="muted"><strong>Outcome:</strong> Demonstrated potential for sustainable pavements using waste-modified asphalt mixtures.</p>
+      </div>
+      <div class="project-img">
+        <div class="project-img-inner">
+          <img src="project-graph.jpg" alt="Predicted vs Actual Marshall Stability">
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- CORE COMPETENCIES -->
   <section class="competencies-section">
@@ -607,21 +717,23 @@
   </section>
 
   <!-- CONTACT -->
-  <h2>Contact</h2>
-  <div class="contact-grid">
-    <div class="contact-box">
-      <h3>Information</h3>
-      <p>📍 Gorakhpur, Uttar Pradesh, India</p>
-      <p>📧 <a href="mailto:bkp0907@gmail.com">bkp0907@gmail.com</a></p>
-      <p>📱 <a href="tel:+916306629410">+91 6306629410</a></p>
-      <p>🔗 <a href="https://www.linkedin.com" target="_blank">LinkedIn</a></p>
+  <section>
+    <h2>Contact</h2>
+    <div class="contact-grid">
+      <div class="contact-box">
+        <h3>Information</h3>
+        <p>📍 Gorakhpur, Uttar Pradesh, India</p>
+        <p>📧 <a href="mailto:bkp0907@gmail.com">bkp0907@gmail.com</a></p>
+        <p>📱 <a href="tel:+916306629410">+91 6306629410</a></p>
+        <p>🔗 <a href="https://www.linkedin.com" target="_blank">LinkedIn</a></p>
+      </div>
+      <div class="contact-box">
+        <h3>Languages</h3>
+        <p>Hindi — Native proficiency</p>
+        <p>English — Fluent proficiency</p>
+      </div>
     </div>
-    <div class="contact-box">
-      <h3>Languages</h3>
-      <p>Hindi — Native proficiency</p>
-      <p>English — Fluent proficiency</p>
-    </div>
-  </div>
+  </section>
 
   <footer>
     © 2025 Bablu Kumar Patel — Portfolio
