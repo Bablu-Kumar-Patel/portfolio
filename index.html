@@ -49,7 +49,7 @@
 
     .hero{
       display:grid;
-      grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);
+      grid-template-columns:minmax(0,1.1fr) minmax(0,1fr); /* always side by side */
       gap:30px;
       align-items:center;
       background:var(--panel);
@@ -168,7 +168,7 @@
 
     .project{
       display:grid;
-      grid-template-columns:minmax(0,1.1fr) minmax(0,0.9fr);
+      grid-template-columns:minmax(0,1.1fr) minmax(0,0.9fr); /* always side by side */
       gap:20px;
       align-items:stretch;
     }
@@ -193,8 +193,10 @@
       border-radius:var(--radius);
       padding:22px;
       display:flex;
+      flex-direction:column;
       align-items:center;
       justify-content:center;
+      gap:8px;
     }
 
     .project-img-inner{
@@ -212,24 +214,30 @@
       border-radius:18px;
     }
 
+    .graph-caption{
+      font-size:0.9rem;
+      text-align:center;
+      color:var(--muted);
+    }
+
     /* ---------- CORE COMPETENCIES ---------- */
 
     .competencies-section{
-      margin-top:44px;
+      margin-top:24px;           /* reduced gap above section */
     }
 
     .comp-panel{
       background:#dedede;
       color:#111;
       border-radius:24px;
-      padding:32px 28px 34px;
+      padding:20px 24px 24px;    /* tighter padding */
     }
 
     .sec-title{
       text-align:center;
       font-size:1.7rem;
       font-weight:800;
-      margin-bottom:18px;
+      margin-bottom:14px;        /* slightly smaller gap */
     }
 
     .comp-layout{
@@ -242,8 +250,9 @@
     .comp-col{
       display:flex;
       flex-direction:column;
-      gap:26px;
+      gap:18px;                  /* closer items */
       max-width:260px;
+      justify-content:center;    /* vertically center beside clover */
     }
 
     .comp-col h3{
@@ -294,7 +303,7 @@
 
     .achievement-panel{
       display:grid;
-      grid-template-columns:minmax(0,1.15fr) minmax(0,0.85fr);
+      grid-template-columns:minmax(0,1.15fr) minmax(0,0.85fr); /* always side by side */
       background:#0e1117;
       border-radius:24px;
       overflow:hidden;
@@ -333,8 +342,8 @@
     }
 
     .ach-image-wrap img{
-      width:420px;
-      max-width:100%;
+      width:100%;
+      max-width:420px;
       height:auto;
       object-fit:contain;
       border-radius:14px;
@@ -376,16 +385,8 @@
     /* ---------- RESPONSIVE: TABLET ---------- */
 
     @media (max-width:1024px){
-      .hero{
-        grid-template-columns:1fr;
-      }
-
       .hero-img{
         height:300px;
-      }
-
-      .project{
-        grid-template-columns:1fr;
       }
 
       .intern-grid{
@@ -399,22 +400,6 @@
       .clover{
         width:280px;
         height:280px;
-      }
-
-      .achievement-panel{
-        grid-template-columns:1fr;
-      }
-
-      .ach-text{
-        text-align:center;
-      }
-
-      .ach-text p{
-        margin:0 auto;
-      }
-
-      .ach-image-wrap img{
-        width:70%;
       }
     }
 
@@ -454,12 +439,8 @@
         grid-template-columns:1fr;
       }
 
-      .project{
-        grid-template-columns:1fr;
-      }
-
       .comp-panel{
-        padding:24px 18px 26px;
+        padding:20px 16px 22px;
       }
 
       .comp-layout{
@@ -475,18 +456,6 @@
       .clover{
         width:240px;
         height:240px;
-      }
-
-      .achievement-panel{
-        grid-template-columns:1fr;
-      }
-
-      .achievement-panel h4{
-        font-size:1rem;
-      }
-
-      .gate-title{
-        font-size:2.2rem;
       }
 
       .contact-grid{
@@ -647,6 +616,9 @@
         <div class="project-img-inner">
           <img src="project-graph.jpg" alt="Predicted vs Actual Marshall Stability">
         </div>
+        <p class="graph-caption">
+          Graph from B.Tech Project: Predicted Marshall Stability vs. Actual Lab Results.
+        </p>
       </div>
     </div>
   </section>
