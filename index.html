@@ -182,6 +182,11 @@
       padding:16px 18px 18px;
     }
 
+    .edu-box h3{
+      margin-bottom:6px;
+      font-size:1.15rem;
+    }
+
     .edu-grade{
       font-size:2.2rem;
       font-weight:800;
@@ -226,6 +231,10 @@
       padding:18px;
     }
 
+    .project-text h3{
+      margin-bottom:6px;
+    }
+
     .project-text ul{
       margin:6px 0 0;
       padding-left:18px;
@@ -242,13 +251,11 @@
       gap:8px;
     }
 
-    /* ===== Graph Rounded Corners (FIX) ===== */
-
     .project-img-inner{
       width:100%;
       max-width:480px;
       border-radius:18px;
-      overflow:hidden;
+      overflow:hidden;           /* ensure rounded corners apply */
     }
 
     .project-img-inner img{
@@ -256,7 +263,7 @@
       height:auto;
       object-fit:cover;
       display:block;
-      border-radius:18px;
+      border-radius:18px;         /* smooth corners like the card */
     }
 
     .graph-caption{
@@ -346,6 +353,7 @@
       background:var(--panel);
       border-radius:var(--radius);
       padding:18px 22px;
+      line-height:1.6;
     }
 
     .cert-card ul{
@@ -355,7 +363,7 @@
       line-height:1.55;
     }
 
-    /* ---------- GATE ACHIEVEMENT ---------- */
+    /* ---------- GATE 2025 ACHIEVEMENT ---------- */
 
     .achievement-section{
       margin-top:44px;
@@ -477,6 +485,7 @@
       }
     }
 
+    /* Fix sticky nav heading cut */
     html{
       scroll-padding-top:80px;
     }
@@ -503,275 +512,295 @@
 
 <div class="container">
 
-<!-- ========= HERO ========= -->
-<section id="hero" class="hero">
-  <div>
-    <h1>Bablu Kumar Patel</h1>
-    <p>
-      GATE-qualified M.Tech student specializing in Transportation Engineering,
-      focused on Urban Transportation Planning, pavement analysis and sustainable
-      infrastructure design. Leveraging machine learning across transportation,
-      from materials to planning.
-    </p>
-
-    <div style="display:flex; gap:20px; margin-top:22px; flex-wrap:wrap;">
-      <a class="btn" href="https://www.linkedin.com/in/bablu-kumar-patel-0b0b76241" target="_blank">
-        Connect on LinkedIn
-      </a>
-      <a class="btn" href="Bablu_Kumar_Patel_Resume.pdf" download>
-        Download Resume
-      </a>
-    </div>
-
-  </div>
-  <div class="hero-img">
-    <img src="hero-bridge.jpg" alt="Highway bridge">
-  </div>
-</section>
-
-<!-- ========= SUMMARY ========= -->
-<section id="summary">
-  <h2>Professional Summary</h2>
-  <div class="grid3">
-    <div class="card">
-      <h3>GATE-Qualified Expertise</h3>
-      <p class="muted">
-        M.Tech student at NIT Warangal specializing in Transportation Engineering,
-        qualified in GATE 2025 (Civil Engineering).
-      </p>
-    </div>
-    <div class="card">
-      <h3>Data-Driven Transportation</h3>
-      <p class="muted">
-        Applying machine learning models in pavement stability prediction and
-        urban transportation planning.
-      </p>
-    </div>
-    <div class="card">
-      <h3>Sustainable Infrastructure</h3>
-      <p class="muted">
-        Field exposure and materials testing experience through a PWD internship,
-        focusing on quality control and pavement layers.
-      </p>
-    </div>
-  </div>
-</section>
-
-<!-- ========= EDUCATION ========= -->
-<section id="education">
-  <h2>Education</h2>
-
-  <div class="edu-row">
-    <div class="edu-box">
-      <h3>M.Tech, Transportation Engineering</h3>
-      <p class="muted">National Institute of Technology (NIT) Warangal</p>
-      <p class="muted">Expected Graduation: July 2027</p>
-      <p class="muted">
-        Focus: Urban Transportation Planning, Pavement Analysis,
-        Sustainable Infrastructure Design.
-      </p>
-    </div>
-    <div class="edu-box">
-      <h3>B.Tech, Civil Engineering</h3>
-      <p class="muted">Rajkiya Engineering College, Azamgarh</p>
-      <p class="muted">Graduated: July 2025</p>
-      <p class="muted">
-        Final Year Project: Machine Learning Based Prediction of Marshall Stability
-        of Waste Modified Asphalt Concrete.
-      </p>
-    </div>
-  </div>
-
-  <div class="edu-row">
-    <div class="edu-box">
-      <div class="edu-grade">92.6%</div>
-      <p class="muted">Class 12 — C.B.S.E. Board</p>
-    </div>
-    <div class="edu-box">
-      <div class="edu-grade">94%</div>
-      <p class="muted">Class 10 — C.B.S.E. Board</p>
-    </div>
-  </div>
-</section>
-
-<!-- ========= PWD INTERNSHIP ========= -->
-<section>
-  <h2>PWD Internship</h2>
-  <div class="intern-grid">
-    <div class="intern-card">
-      <img src="intern-survey.jpg" alt="Surveying">
-      <h3>Field Exposure & Surveying</h3>
-      <p class="muted">
-        Four-week program involving leveling, traversing, and cross-section preparation
-        for road alignment and highway projects.
-      </p>
-    </div>
-    <div class="intern-card">
-      <img src="intern-quality.jpg" alt="Quality Control">
-      <h3>Quality Control Support</h3>
-      <p class="muted">
-        Assisted in quality control of construction materials, including soil,
-        aggregates, and pavement layer testing.
-      </p>
-    </div>
-  </div>
-</section>
-
-<!-- ========= TECHNICAL ========= -->
-<section>
-  <h2>Key Technical Proficiencies</h2>
-  <div class="grid3">
-    <div class="card">
-      <h3>Civil Engineering Software</h3>
-      <p class="muted">AutoCAD, STAAD Pro, IIT PAVE, MS Excel.</p>
-    </div>
-    <div class="card">
-      <h3>Materials & Testing</h3>
-      <p class="muted">
-        Marshall Stability testing, Asphalt Mix Design,
-        Aggregate & Concrete testing.
-      </p>
-    </div>
-    <div class="card">
-      <h3>Data & Machine Learning</h3>
-      <p class="muted">
-        Regression models, engineering datasets,
-        IBM SPSS and Excel-based analysis.
-      </p>
-    </div>
-  </div>
-</section>
-
-<!-- ========= FEATURED PROJECT ========= -->
-<section id="projects">
-  <h2>Featured Project</h2>
-  <div class="project">
-    <div class="project-text">
-      <h3>ML-Based Prediction of Marshall Stability</h3>
-      <p class="muted">
-        Evaluated Sugarcane Bagasse Ash and Reclaimed Aggregates as sustainable
-        alternatives in asphalt concrete and built ML models to predict Marshall
-        Stability.
-      </p>
-      <ul class="muted">
-        <li>Collected experimental data from Marshall Stability tests.</li>
-        <li>Analyzed data from 72 specimens with varying SCBA (0–5%) and bitumen levels.</li>
-        <li>Developed Support Vector Machine achieving 99% training accuracy (R^2=0.99).</li>
-        <li>Identified 5% SCBA as the optimal replacement for maximum load capacity.</li>
-      </ul>
-      <p class="muted"><strong>Outcome:</strong> Demonstrated potential for
-        sustainable pavements using waste-modified asphalt mixtures.</p>
-    </div>
-    <div class="project-img">
-      <div class="project-img-inner">
-        <img src="project-graph.jpg" alt="Predicted vs Actual Marshall Stability">
-      </div>
-      <p class="graph-caption">
-        Graph from B.Tech Project: Predicted Marshall Stability vs. Actual Lab Results.
-      </p>
-    </div>
-  </div>
-</section>
-
-<!-- ========= CORE COMPETENCIES ========= -->
-<section class="competencies-section">
-  <div class="comp-panel">
-    <h2 class="sec-title">Core Competencies in Civil Engineering</h2>
-
-    <div class="comp-layout">
-
-      <div class="comp-col">
-        <div>
-          <h3>Transportation Engineering</h3>
-          <p>Pavement Design, Traffic Engineering, Highway Planning.</p>
-        </div>
-        <div>
-          <h3>Data Analysis</h3>
-          <p>
-            Statistical modeling, machine learning, and data-driven decision-making
-            using MS Excel, SPSS, and ML tools.
-          </p>
-        </div>
-      </div>
-
-      <div class="clover-wrap">
-        <div class="clover">
-          <img src="icon-road.jpg"   class="tl" alt="Transportation">
-          <img src="icon-asphalt.jpg" class="tr" alt="Pavement Testing">
-          <img src="icon-data.jpg"   class="bl" alt="Data Analysis">
-          <img src="icon-chart.jpg"  class="br" alt="Project Management">
-        </div>
-      </div>
-
-      <div class="comp-col">
-        <div>
-          <h3>Materials & Pavement Testing</h3>
-          <p>Asphalt Concrete, Marshall Stability, Waste-Modified Pavement.</p>
-        </div>
-        <div>
-          <h3>Project Management</h3>
-          <p>
-            Planning, scheduling, and execution of civil infrastructure projects.
-          </p>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ========= CERTIFICATIONS ========= -->
-<section id="certifications">
-  <h2>Certifications & Workshops</h2>
-  <div class="cert-card">
-    <ul>
-      <li>AutoCAD–2D Workshop — Learn Delta</li>
-      <li>Developing Soft Skills and Personality (NPTEL)</li>
-      <li>Enhancing Soft Skills and Personality (NPTEL)</li>
-    </ul>
-  </div>
-</section>
-
-<!-- ========= GATE ACHIEVEMENT ========= -->
-<section class="achievement-section">
-  <div class="achievement-panel">
-    <div class="ach-text">
-      <h4>Key Achievement: GATE 2025 Qualification</h4>
-      <h1 class="gate-title">GATE 2025<br>Qualified</h1>
+  <!-- ========= HERO ========= -->
+  <section id="hero" class="hero">
+    <div>
+      <h1>Bablu Kumar Patel</h1>
       <p>
-        Successfully qualified in the national-level Graduate Aptitude Test in
-        Engineering (Civil Engineering), a critical benchmark for postgraduate
-        admissions in India and a testament to strong foundational knowledge.
+        GATE-qualified M.Tech student specializing in Transportation Engineering,
+        focused on Urban Transportation Planning, pavement analysis and sustainable
+        infrastructure design. Leveraging machine learning across transportation,
+        from materials to planning.
       </p>
-    </div>
-    <div class="ach-image-wrap">
-      <img src="gate-trophy.jpg" alt="GATE 2025 Trophy">
-    </div>
-  </div>
-</section>
 
-<!-- ========= CONTACT ========= -->
-<section id="contact">
-  <h2>Contact</h2>
-  <div class="contact-grid">
-    <div class="contact-box">
-      <h3>Information</h3>
-      <p>📍 Gorakhpur, Uttar Pradesh, India</p>
-      <p>📧 <a href="mailto:bkp0907@gmail.com">bkp0907@gmail.com</a></p>
-      <p>📱 <a href="tel:+916306629410">+91 6306629410</a></p>
-      <p>🔗 <a href="https://www.linkedin.com/in/bablu-kumar-patel-0b0b76241" target="_blank">LinkedIn</a></p>
-    </div>
-    <div class="contact-box">
-      <h3>Languages</h3>
-      <p>Hindi — Native proficiency</p>
-      <p>English — Fluent proficiency</p>
-    </div>
-  </div>
-</section>
+      <div style="display:flex; gap:20px; margin-top:22px; flex-wrap:wrap;">
+        <a class="btn" href="https://www.linkedin.com/in/bablu-kumar-patel-0b0b76241" target="_blank">
+          Connect on LinkedIn
+        </a>
+        <a class="btn" href="Bablu_Kumar_Patel_Resume.pdf" download>
+          Download Resume
+        </a>
+      </div>
 
-<footer>
-  © 2025 Bablu Kumar Patel — Portfolio
-</footer>
+    </div>
+    <div class="hero-img">
+      <img src="hero-bridge.jpg" alt="Highway bridge">
+    </div>
+  </section>
+
+  <!-- ========= SUMMARY ========= -->
+  <section id="summary">
+    <h2>Professional Summary</h2>
+    <div class="grid3">
+      <div class="card">
+        <h3>GATE-Qualified Expertise</h3>
+        <p class="muted">
+          M.Tech student at NIT Warangal specializing in Transportation Engineering,
+          qualified in GATE 2025 (Civil Engineering).
+        </p>
+      </div>
+      <div class="card">
+        <h3>Data-Driven Transportation</h3>
+        <p class="muted">
+          Applying machine learning models in pavement stability prediction and
+          urban transportation planning.
+        </p>
+      </div>
+      <div class="card">
+        <h3>Sustainable Infrastructure</h3>
+        <p class="muted">
+          Field exposure and materials testing experience through a PWD internship,
+          focusing on quality control and pavement layers.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========= EDUCATION ========= -->
+  <section id="education">
+    <h2>Education</h2>
+
+    <div class="edu-row">
+      <div class="edu-box">
+        <h3>M.Tech, Transportation Engineering</h3>
+        <p class="muted">National Institute of Technology (NIT) Warangal</p>
+        <p class="muted">Expected Graduation: July 2027</p>
+        <p class="muted">
+          Focus areas: Urban Transportation Planning, Signal Design, Pavement Analysis,
+          Sustainable Materials and Infrastructure Design.
+        </p>
+      </div>
+      <div class="edu-box">
+        <h3>B.Tech, Civil Engineering</h3>
+        <p class="muted">Rajkiya Engineering College, Azamgarh</p>
+        <p class="muted">Graduated: July 2025</p>
+        <p class="muted">
+          Final Year Project: Machine Learning Based Prediction of Marshall Stability
+          of Waste Modified Asphalt Concrete.
+        </p>
+      </div>
+    </div>
+
+    <div class="edu-row">
+      <div class="edu-box">
+        <div class="edu-grade">92.6%</div>
+        <p class="muted">Class 12 – C.B.S.E. Board</p>
+      </div>
+      <div class="edu-box">
+        <div class="edu-grade">94%</div>
+        <p class="muted">Class 10 – C.B.S.E. Board</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========= INTERNSHIP ========= -->
+  <section>
+    <h2>PWD Internship</h2>
+    <div class="intern-grid">
+      <div class="intern-card">
+        <img src="intern-survey.jpg" alt="Surveying">
+        <h3>Field Exposure &amp; Surveying</h3>
+        <p class="muted">
+          Four-week program involving leveling, traversing and cross-section preparation
+          for road alignment and highway projects.
+        </p>
+      </div>
+      <div class="intern-card">
+        <img src="intern-quality.jpg" alt="Quality Control">
+        <h3>Quality Control Support</h3>
+        <p class="muted">
+          Assisted in quality control of construction materials, including soil,
+          aggregate and pavement layers testing.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========= TECHNICAL PROFICIENCIES ========= -->
+  <section>
+    <h2>Key Technical Proficiencies</h2>
+    <div class="grid3">
+      <div class="card">
+        <h3>Civil Engineering Software</h3>
+        <p class="muted">AutoCAD, STAAD Pro, IIT PAVE, MS Excel.</p>
+      </div>
+      <div class="card">
+        <h3>Materials &amp; Testing</h3>
+        <p class="muted">
+          Marshall Stability testing, Asphalt Mix Design, Aggregate &amp; Concrete testing.
+        </p>
+      </div>
+      <div class="card">
+        <h3>Data &amp; Machine Learning</h3>
+        <p class="muted">
+          Regression models, engineering datasets, IBM SPSS and Excel-based analysis.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========= FEATURED PROJECT ========= -->
+  <section id="projects">
+    <h2>Featured Project</h2>
+    <div class="project">
+      <div class="project-text">
+        <h3>ML-Based Prediction of Marshall Stability</h3>
+        <p class="muted">
+          Evaluated Sugarcane Bagasse Ash and Reclaimed Aggregates as sustainable
+          alternatives in asphalt concrete and built ML models to predict Marshall Stability.
+        </p>
+        <ul class="muted">
+          <li>Collected experimental data from Marshall Stability tests.</li>
+          <li>Analyzed data from 72 specimens with varying SCBA (0–5%) and bitumen levels.</li>
+          <li>Developed Support Vector Machine achieving 99% training accuracy (R^2=0.99).</li> 
+          <li>Identified 5% SCBA as the optimal replacement for maximum load capacity.</li>
+        </ul>
+        <p class="muted"><strong>Outcome:</strong> Demonstrated potential for sustainable pavements
+          using waste-modified asphalt mixtures.</p>
+      </div>
+      <div class="project-img">
+        <div class="project-img-inner">
+          <img src="project-graph.jpg" alt="Predicted vs Actual Marshall Stability">
+        </div>
+        <p class="graph-caption">
+          Graph from B.Tech Project: Predicted Marshall Stability vs. Actual Lab Results.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========= CORE COMPETENCIES ========= -->
+  <section class="competencies-section">
+    <div class="comp-panel">
+      <h2 class="sec-title">Core Competencies in Civil Engineering</h2>
+
+      <div class="comp-layout">
+
+        <div class="comp-col">
+          <div>
+            <h3>Transportation Engineering</h3>
+            <p>Pavement Design, Traffic Engineering, Highway Planning.</p>
+          </div>
+          <div>
+            <h3>Data Analysis</h3>
+            <p>
+              Statistical modeling, machine learning, and data-driven decision-making
+              using MS Excel, SPSS, and ML tools.
+            </p>
+          </div>
+        </div>
+
+        <div class="clover-wrap">
+          <div class="clover">
+            <img src="icon-road.jpg" class="tl" alt="Transportation">
+            <img src="icon-asphalt.jpg" class="tr" alt="Pavement Testing">
+            <img src="icon-data.jpg" class="bl" alt="Data Analysis">
+            <img src="icon-chart.jpg" class="br" alt="Project Management">
+          </div>
+        </div>
+
+        <div class="comp-col">
+          <div>
+            <h3>Materials &amp; Pavement Testing</h3>
+            <p>Asphalt Concrete, Marshall Stability, Waste-Modified Pavement.</p>
+          </div>
+          <div>
+            <h3>Project Management</h3>
+            <p>
+              Planning, scheduling, and execution of civil infrastructure projects.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========= CERTIFICATIONS (UPDATED) ========= -->
+  <section id="certifications">
+    <h2>Certifications</h2>
+
+    <!-- Core Technical Certifications -->
+    <div class="cert-card" style="margin-bottom:18px;">
+      <h3 style="margin-bottom:8px;">Core Technical Certifications</h3>
+      <ul>
+        <li>
+          <strong>AutoCAD — 8-Week Training (Internshala) — Top Performer</strong><br>
+          <a href="AutoCAD Training - Certificate of Completion.pdf" download>
+            Download Certificate
+          </a>
+        </li>
+        <li style="margin-top:10px;">
+          <strong>STAAD Pro — 8-Week Training (Internshala)</strong><br>
+          <a href="STAAD Pro Training - Certificate of Completion.pdf" download>
+            Download Certificate
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Workshops & Courses -->
+    <div class="cert-card">
+      <h3 style="margin-bottom:8px;">Workshops &amp; Courses</h3>
+      <ul>
+        <li>AutoCAD–2D Workshop — Learn Delta</li>
+        <li>Developing Soft Skills and Personality (NPTEL)</li>
+        <li>Enhancing Soft Skills and Personality (NPTEL)</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ========= GATE 2025 ACHIEVEMENT ========= -->
+  <section class="achievement-section">
+    <div class="achievement-panel">
+      <div class="ach-text">
+        <h4>Key Achievement: GATE 2025 Qualification</h4>
+        <h1 class="gate-title">GATE 2025<br>Qualified</h1>
+        <p>
+          Successfully qualified in the national-level Graduate Aptitude Test in
+          Engineering (Civil Engineering), a critical benchmark for postgraduate
+          admissions in India and a testament to strong foundational knowledge.
+        </p>
+      </div>
+      <div class="ach-image-wrap">
+        <img src="gate-trophy.jpg" alt="GATE 2025 Trophy">
+      </div>
+    </div>
+  </section>
+
+  <!-- ========= CONTACT ========= -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <div class="contact-grid">
+      <div class="contact-box">
+        <h3>Information</h3>
+        <p>📍 Gorakhpur, Uttar Pradesh, India</p>
+        <p>📧 <a href="mailto:bkp0907@gmail.com">bkp0907@gmail.com</a></p>
+        <p>📱 <a href="tel:+916306629410">+91 6306629410</a></p>
+        <p>🔗 <a href="https://www.linkedin.com/in/bablu-kumar-patel-0b0b76241" target="_blank">
+          LinkedIn</a></p>
+      </div>
+      <div class="contact-box">
+        <h3>Languages</h3>
+        <p>Hindi — Native proficiency</p>
+        <p>English — Fluent proficiency</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 Bablu Kumar Patel — Portfolio
+  </footer>
 
 </div>
 </body>
