@@ -16,6 +16,18 @@
       --muted:#c7ccd8;
       --radius:18px;
     }
+
+    /* ============ ANIMATED CANVAS BACKGROUND - NEW ============ */
+    #canvas-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+    /* ============ END OF NEW BACKGROUND CODE ============ */
+
 .intern-heading {
   font-size: 1.8rem;
   font-weight: 700;
@@ -91,6 +103,7 @@
       display:flex;
       gap:24px;
       font-size:0.95rem;
+      align-items:center;
     }
 
     .nav-links a{
@@ -128,6 +141,24 @@
       font-size:2.4rem;
       margin-bottom:8px;
     }
+
+    /* ========== TYPING TEXT ANIMATION ========== */
+    #typingText {
+      display: inline-block;
+      border-right: 3px solid #ec4899;
+      padding-right: 5px;
+      animation: blink-caret 0.75s step-end infinite;
+    }
+
+    @keyframes blink-caret {
+      from, to {
+        border-color: transparent;
+      }
+      50% {
+        border-color: #ec4899;
+      }
+    }
+    /* ========== END TYPING TEXT ========== */
 
     .hero p{
       color:var(--muted);
@@ -292,6 +323,158 @@
       margin-top:24px;
     }
 
+    /* ========== NEW COMPETENCY CARD STYLES ========== */
+    .competency-card {
+      background: var(--card);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      padding: 2.5rem;
+      transition: all 0.4s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .competency-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(37, 117, 252, 0.1), transparent);
+      transition: left 0.6s ease;
+    }
+
+    .competency-card:hover::before {
+      left: 100%;
+    }
+
+    .competency-card:hover {
+      transform: translateY(-10px);
+      border-color: var(--accent);
+      box-shadow: 0 20px 60px rgba(37, 117, 252, 0.3);
+    }
+
+    .competency-icon {
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(135deg, rgba(37, 117, 252, 0.2), rgba(37, 117, 252, 0.05));
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+      color: var(--accent);
+      transition: all 0.3s ease;
+    }
+
+    .competency-card:hover .competency-icon {
+      transform: scale(1.1) rotate(5deg);
+      background: linear-gradient(135deg, rgba(37, 117, 252, 0.3), rgba(37, 117, 252, 0.1));
+    }
+
+    /* ========== ABOUT ME CARDS ========== */
+    .about-card {
+      background: var(--card);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 25px;
+      padding: 3rem 2.5rem;
+      transition: all 0.4s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .about-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(139, 92, 246, 0.15), transparent);
+      transition: left 0.6s ease;
+    }
+
+    .about-card:hover::before {
+      left: 100%;
+    }
+
+    .about-card:hover {
+      transform: translateY(-10px);
+      border-color: #8b5cf6;
+      box-shadow: 0 20px 60px rgba(139, 92, 246, 0.4);
+    }
+
+    .about-icon {
+      width: 80px;
+      height: 80px;
+      background: rgba(139, 92, 246, 0.2);
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 2rem;
+      transition: all 0.3s ease;
+    }
+
+    .about-card:hover .about-icon {
+      transform: scale(1.1) rotate(-5deg);
+      background: rgba(139, 92, 246, 0.35);
+    }
+    /* ========== END ABOUT ME CARDS ========== */
+
+    .competency-card h3 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: var(--text);
+    }
+
+    .competency-card p {
+      color: var(--muted);
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+      font-size: 0.95rem;
+    }
+
+    .competency-tags {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.5rem;
+    }
+
+    /* Center the last tag if odd number of tags */
+    .competency-tags .tag:last-child:nth-child(odd) {
+      grid-column: 1 / -1;
+      justify-self: center;
+      max-width: 50%;
+    }
+
+    .tag {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.6rem 1rem;
+      background: rgba(37, 117, 252, 0.1);
+      border: 1px solid rgba(37, 117, 252, 0.3);
+      border-radius: 50px;
+      color: var(--accent);
+      font-size: 0.85rem;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      text-align: center;
+      min-height: 2.5rem;
+      line-height: 1.3;
+      word-wrap: break-word;
+      hyphens: auto;
+    }
+
+    .tag:hover {
+      background: rgba(37, 117, 252, 0.2);
+      transform: translateY(-2px);
+    }
+    /* ========== END NEW COMPETENCY STYLES ========== */
+
     .comp-panel{
       background:#dedede;
       color:#111;
@@ -377,6 +560,39 @@
       line-height:1.55;
     }
 
+    /* ========== MODERN CERTIFICATION CARDS ========== */
+    .cert-modern-card {
+      background: var(--card);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 25px;
+      padding: 2.5rem;
+      transition: all 0.4s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cert-modern-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(139, 92, 246, 0.1), transparent);
+      transition: left 0.6s ease;
+    }
+
+    .cert-modern-card:hover::before {
+      left: 100%;
+    }
+
+    .cert-modern-card:hover {
+      transform: translateY(-10px);
+      border-color: #8b5cf6;
+      box-shadow: 0 20px 60px rgba(139, 92, 246, 0.3);
+    }
+    /* ========== END MODERN CERTIFICATION CARDS ========== */
+
     /* ---------- GATE 2025 ACHIEVEMENT ---------- */
 
     .achievement-section{
@@ -446,6 +662,60 @@
       padding:16px 18px;
     }
 
+    /* ========== NEW CONTACT STYLES ========== */
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      padding: 1.5rem;
+      background: var(--card);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 15px;
+      transition: all 0.3s ease;
+    }
+
+    .contact-item:hover {
+      transform: translateX(10px);
+      border-color: var(--accent);
+      box-shadow: 0 10px 30px rgba(37, 117, 252, 0.3);
+    }
+
+    .contact-icon {
+      font-size: 2rem;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(37, 117, 252, 0.1);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .contact-form {
+      background: var(--card);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      padding: 2.5rem;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--accent);
+      background: rgba(255, 255, 255, 0.08);
+      box-shadow: 0 0 0 3px rgba(37, 117, 252, 0.1);
+    }
+
+    .contact-form button:hover {
+      background: #1a5fd9;
+      transform: translateY(-2px);
+      box-shadow: 0 5px 20px rgba(37, 117, 252, 0.4);
+    }
+    /* ========== END NEW CONTACT STYLES ========== */
+
     footer{
       text-align:center;
       margin-top:30px;
@@ -464,6 +734,12 @@
       .hero{
         grid-template-columns:1fr;
       }
+      .hero h1{
+        font-size:2.5rem !important;
+      }
+      #typingText{
+        font-size:1.2rem !important;
+      }
       .hero-img{
         height:220px;
       }
@@ -481,6 +757,14 @@
       }
       .achievement-panel{
         grid-template-columns:1fr;
+      }
+      .achievement-section > div {
+        grid-template-columns: 1fr !important;
+        padding: 2rem !important;
+        text-align: center;
+      }
+      .achievement-section h2 {
+        font-size: 2.5rem !important;
       }
       .contact-grid{
         grid-template-columns:1fr;
@@ -508,15 +792,20 @@
 
 <body>
 
+<!-- ============ ANIMATED CANVAS BACKGROUND - NEW ============ -->
+<canvas id="canvas-bg"></canvas>
+<!-- ============ END OF NEW BACKGROUND ============ -->
+
 <!-- ========= NAVBAR ========= -->
 <header class="nav">
   <div class="nav-container">
-    <div class="nav-left">Bablu Kumar Patel</div>
+    <div class="nav-left" style="background: linear-gradient(135deg, #fff 0%, #a78bfa 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Bablu Kumar Patel</div>
     <nav class="nav-links">
       <a href="#hero">Home</a>
-      <a href="#summary">Summary</a>
+      <a href="#about">About</a>
       <a href="#education">Education</a>
       <a href="#projects">Projects</a>
+      <a href="#competencies">Skills</a>
       <a href="#certifications">Certifications</a>
       <a href="#contact">Contact</a>
       <a href="Bablu_Kumar_Patel_Resume.pdf" download class="resume-btn">Resume</a>
@@ -529,8 +818,12 @@
   <!-- ========= HERO ========= -->
   <section id="hero" class="hero">
     <div>
-      <h1>Bablu Kumar Patel</h1>
-      <p>
+      <h1 style="font-size: 3.5rem; font-weight: 900; margin-bottom: 0.3rem; line-height: 1.1; background: linear-gradient(135deg, #fff 0%, #a78bfa 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Bablu Kumar Patel</h1>
+      
+      <!-- Typing Effect Text -->
+      <p id="typingText" style="font-size: 1.5rem; font-weight: 700; color: #ec4899; margin: 0 0 1.5rem 0; line-height: 1.2;"></p>
+      
+      <p style="margin-top: 1.5rem;">
         GATE-qualified M.Tech student specializing in Transportation Engineering,
         focused on Urban Transportation Planning, pavement analysis and sustainable
         infrastructure design. Leveraging machine learning across transportation,
@@ -552,37 +845,53 @@
     </div>
   </section>
 
-  <!-- ========= SUMMARY ========= -->
-  <section id="summary">
-    <h2>Professional Summary</h2>
-    <div class="grid3">
-      <div class="card">
-        <h3>GATE-Qualified Expertise</h3>
-        <p class="muted">
-          M.Tech student at NIT Warangal specializing in Transportation Engineering,
-          qualified in GATE 2025 (Civil Engineering).
-        </p>
+  <!-- ========= ABOUT ME ========= -->
+  <section id="about">
+    <h2 style="text-align: center; font-size: 2.5rem; font-weight: 900; margin-bottom: 1rem; background: linear-gradient(135deg, #fff 0%, #a78bfa 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">About Me</h2>
+    <p style="text-align: center; color: var(--muted); font-size: 1.2rem; margin-bottom: 3rem;">Building Tomorrow's Infrastructure Today</p>
+    
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; max-width: 1400px; margin: 0 auto;">
+      
+      <!-- Card 1 - GATE-Qualified Engineer -->
+      <div class="about-card">
+        <div class="about-icon">
+          <svg width="45" height="45" viewBox="0 0 24 24" fill="#8b5cf6">
+            <path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z"/>
+          </svg>
+        </div>
+        <h3 style="font-size: 1.5rem; margin-bottom: 1.5rem; font-weight: 700;">GATE-Qualified Engineer</h3>
+        <p style="color: var(--muted); line-height: 1.8; font-size: 0.98rem;">Successfully qualified GATE 2025 in Civil Engineering. Currently pursuing M.Tech in Transportation Engineering at NIT Warangal with focus on sustainable infrastructure and data-driven solutions.</p>
       </div>
-      <div class="card">
-        <h3>Data-Driven Transportation</h3>
-        <p class="muted">
-          Applying machine learning models in pavement stability prediction and
-          urban transportation planning.
-        </p>
+      
+      <!-- Card 2 - Data-Driven Engineer -->
+      <div class="about-card">
+        <div class="about-icon">
+          <svg width="45" height="45" viewBox="0 0 24 24" fill="#8b5cf6">
+            <path d="M13 3C9.23 3 6.19 5.95 6 9.66l-1.92 2.88c-.24.36-.29.8-.13 1.21.16.4.51.68.93.75l1.96.39c.33.07.66-.05.91-.3l.81-.81C8.34 16.19 10.47 18 13 18c2.76 0 5-2.24 5-5V8c0-2.76-2.24-5-5-5zm-1.5 9c-.83 0-1.5-.67-1.5-1.5S10.67 9 11.5 9s1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm3 0c-.83 0-1.5-.67-1.5-1.5S13.67 9 14.5 9s1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/>
+          </svg>
+        </div>
+        <h3 style="font-size: 1.5rem; margin-bottom: 1.5rem; font-weight: 700;">Data-Driven Engineer</h3>
+        <p style="color: var(--muted); line-height: 1.8; font-size: 0.98rem;">Applying machine learning algorithms to predict pavement performance and optimize transportation systems. Experienced in SVM, neural networks, and statistical modeling.</p>
       </div>
-      <div class="card">
-        <h3>Sustainable Infrastructure</h3>
-        <p class="muted">
-          Field exposure and materials testing experience through a PWD internship,
-          focusing on quality control and pavement layers.
-        </p>
+      
+      <!-- Card 3 - Sustainability Advocate -->
+      <div class="about-card">
+        <div class="about-icon">
+          <svg width="45" height="45" viewBox="0 0 24 24" fill="#8b5cf6">
+            <path d="M17 8C8 10 5.9 16.17 3.82 21.34l1.89.66.67-2.17C10.42 20.58 13.37 21 17 21c3.95 0 6.83-1.74 7.84-4.59C25.57 14.23 24.5 12 22 12c-1.5 0-2.5.5-3.5 1.5-1-1-2-1.5-3.5-1.5-1 0-2 .33-3 1V8z"/>
+          </svg>
+        </div>
+        <h3 style="font-size: 1.5rem; margin-bottom: 1.5rem; font-weight: 700;">Sustainability Advocate</h3>
+        <p style="color: var(--muted); line-height: 1.8; font-size: 0.98rem;">Researching waste-modified asphalt concrete using Sugarcane Bagasse Ash and reclaimed aggregates to reduce environmental impact while maintaining structural integrity.</p>
       </div>
+      
     </div>
   </section>
 
   <!-- ========= EDUCATION ========= -->
   <section id="education">
-    <h2>Education</h2>
+    <h2 style="text-align: center; font-size: 2.5rem; font-weight: 900; margin-bottom: 1rem; background: linear-gradient(135deg, #fff 0%, #a78bfa 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Education</h2>
+    <p style="text-align: center; color: var(--muted); font-size: 1.1rem; margin-bottom: 3rem;">Academic Journey & Qualifications</p>
 
     <div class="edu-row">
       <div class="edu-box">
@@ -618,11 +927,10 @@
   </section>
 
   <!-- ========= INTERNSHIP ========= -->
-  <section>
-    <h2 class="intern-heading">
-  PWD Internship — Public Works Department, Gorakhpur
-  <span>Summer Intern | July–August 2024</span>
-</h2>
+  <section id="internship">
+    <h2 style="text-align: center; font-size: 2.5rem; font-weight: 900; margin-bottom: 1rem; background: linear-gradient(135deg, #fff 0%, #a78bfa 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Internship Experience</h2>
+    <p style="text-align: center; color: var(--muted); font-size: 1.1rem; margin-bottom: 1.5rem;">PWD Internship — Public Works Department, Gorakhpur</p>
+    <p style="text-align: center; color: var(--muted); font-size: 0.95rem; margin-bottom: 3rem;">Summer Intern | July–August 2024</p>
     <div class="intern-grid">
       <div class="intern-card">
         <img src="intern-survey.jpg" alt="Surveying">
@@ -643,32 +951,10 @@
     </div>
   </section>
 
-  <!-- ========= TECHNICAL PROFICIENCIES ========= -->
-  <section>
-    <h2>Key Technical Proficiencies</h2>
-    <div class="grid3">
-      <div class="card">
-        <h3>Civil Engineering Software</h3>
-        <p class="muted">AutoCAD, STAAD Pro, IIT PAVE, MS Excel.</p>
-      </div>
-      <div class="card">
-        <h3>Materials &amp; Testing</h3>
-        <p class="muted">
-          Marshall Stability testing, Asphalt Mix Design, Aggregate &amp; Concrete testing.
-        </p>
-      </div>
-      <div class="card">
-        <h3>Data &amp; Machine Learning</h3>
-        <p class="muted">
-          Regression models, engineering datasets, IBM SPSS and Excel-based analysis.
-        </p>
-      </div>
-    </div>
-  </section>
-
 <!-- ========= FEATURED PROJECTS ========= -->
 <section id="projects">
-  <h2>Featured Projects</h2>
+  <h2 style="text-align: center; font-size: 2.5rem; font-weight: 900; margin-bottom: 1rem; background: linear-gradient(135deg, #fff 0%, #a78bfa 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Featured Projects</h2>
+  <p style="text-align: center; color: var(--muted); font-size: 1.1rem; margin-bottom: 3rem;">Research & Development in Transportation Engineering</p>
 
   <!-- Existing B.Tech Project -->
   <div class="project" style="margin-bottom:22px;">
@@ -734,128 +1020,473 @@
 
 
   <!-- ========= CORE COMPETENCIES ========= -->
-  <section class="competencies-section">
-    <div class="comp-panel">
-      <h2 class="sec-title">Core Competencies in Civil Engineering</h2>
+  <section id="competencies" class="competencies-section">
+    <h2 style="text-align: center; font-size: 2.5rem; font-weight: 900; margin-bottom: 1rem; background: linear-gradient(135deg, #fff 0%, #a78bfa 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Core Competencies in Civil Engineering</h2>
+    <p style="text-align: center; color: var(--muted); font-size: 1.1rem; margin-bottom: 3rem;">Multidisciplinary Expertise Across Transportation & Infrastructure</p>
 
-      <div class="comp-layout">
-
-        <div class="comp-col">
-          <div>
-            <h3>Transportation Engineering</h3>
-            <p>Pavement Design, Traffic Engineering, Highway Planning.</p>
-          </div>
-          <div>
-            <h3>Data Analysis</h3>
-            <p>
-              Statistical modeling, machine learning, and data-driven decision-making
-              using MS Excel, SPSS, and ML tools.
-            </p>
-          </div>
+    <!-- First Row - 3 Cards -->
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; max-width: 1400px; margin: 0 auto 2rem auto;">
+      
+      <!-- Competency Card 1 - Transportation Engineering -->
+      <div class="competency-card">
+        <div class="competency-icon">
+          <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M1 3h15v13H1z"></path>
+            <path d="M16 8h3l3 3v5h-6V8z"></path>
+            <circle cx="5.5" cy="18.5" r="2.5"></circle>
+            <circle cx="18.5" cy="18.5" r="2.5"></circle>
+          </svg>
         </div>
-
-        <div class="clover-wrap">
-          <div class="clover">
-            <img src="icon-road.jpg" class="tl" alt="Transportation">
-            <img src="icon-asphalt.jpg" class="tr" alt="Pavement Testing">
-            <img src="icon-data.jpg" class="bl" alt="Data Analysis">
-            <img src="icon-chart.jpg" class="br" alt="Project Management">
-          </div>
+        <h3>Transportation Engineering</h3>
+        <p>Pavement Design, Traffic Engineering, Signal Design, Highway Planning, and Geometric Design of transportation systems.</p>
+        <div class="competency-tags">
+          <span class="tag">Highway Planning</span>
+          <span class="tag">Pavement Design</span>
+          <span class="tag">Traffic Analysis</span>
+          <span class="tag">Signal Design</span>
         </div>
-
-        <div class="comp-col">
-          <div>
-            <h3>Materials &amp; Pavement Testing</h3>
-            <p>Asphalt Concrete, Marshall Stability, Waste-Modified Pavement.</p>
-          </div>
-          <div>
-            <h3>Project Management</h3>
-            <p>
-              Planning, scheduling, and execution of civil infrastructure projects.
-            </p>
-          </div>
-        </div>
-
       </div>
+
+      <!-- Competency Card 2 - Civil Engineering Software -->
+      <div class="competency-card">
+        <div class="competency-icon">
+          <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+            <line x1="8" y1="21" x2="16" y2="21"></line>
+            <line x1="12" y1="17" x2="12" y2="21"></line>
+          </svg>
+        </div>
+        <h3>Civil Engineering Software</h3>
+        <p>Proficient in industry-standard software for design, analysis, and traffic simulation.</p>
+        <div class="competency-tags">
+          <span class="tag">PTV VISSIM</span>
+          <span class="tag">PTV VISUM</span>
+          <span class="tag">AutoCAD</span>
+          <span class="tag">STAAD Pro</span>
+          <span class="tag">IIT PAVE</span>
+        </div>
+      </div>
+
+      <!-- Competency Card 3 - Data Analysis & ML -->
+      <div class="competency-card">
+        <div class="competency-icon">
+          <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+          </svg>
+        </div>
+        <h3>Data Analysis & Machine Learning</h3>
+        <p>Statistical modeling, machine learning algorithms, and data-driven decision-making using advanced analytical tools.</p>
+        <div class="competency-tags">
+          <span class="tag">SVM Modeling</span>
+          <span class="tag">Neural Networks</span>
+          <span class="tag">IBM SPSS</span>
+          <span class="tag">Advanced Excel</span>
+          <span class="tag">Regression Analysis</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Second Row - 2 Cards Centered -->
+    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; max-width: 930px; margin: 0 auto;">
+
+      <!-- Competency Card 4 - Materials & Testing -->
+      <div class="competency-card">
+        <div class="competency-icon">
+          <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M10 2v7.527a2 2 0 0 1-.211.896L4.72 20.55a1 1 0 0 0 .9 1.45h12.76a1 1 0 0 0 .9-1.45l-5.069-10.127A2 2 0 0 1 14 9.527V2"></path>
+            <path d="M8.5 2h7"></path>
+            <path d="M7 16h10"></path>
+          </svg>
+        </div>
+        <h3>Materials & Pavement Testing</h3>
+        <p>Comprehensive expertise in asphalt concrete analysis, Marshall Stability testing, and innovative waste-modified pavement research.</p>
+        <div class="competency-tags">
+          <span class="tag">Marshall Testing</span>
+          <span class="tag">Mix Design</span>
+          <span class="tag">Aggregate Testing</span>
+          <span class="tag">SCBA Research</span>
+        </div>
+      </div>
+
+      <!-- Competency Card 5 - Project Management & Quality Control -->
+      <div class="competency-card">
+        <div class="competency-icon">
+          <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+            <line x1="9" y1="3" x2="9" y2="21"></line>
+            <line x1="15" y1="3" x2="15" y2="21"></line>
+            <line x1="3" y1="9" x2="21" y2="9"></line>
+            <line x1="3" y1="15" x2="21" y2="15"></line>
+          </svg>
+        </div>
+        <h3>Project Management & Quality Control</h3>
+        <p>Comprehensive planning, scheduling, quality assurance, and successful execution of civil infrastructure projects with materials testing.</p>
+        <div class="competency-tags">
+          <span class="tag">Planning</span>
+          <span class="tag">Scheduling</span>
+          <span class="tag">Quality Control</span>
+          <span class="tag">Concrete Testing</span>
+          <span class="tag">Field Inspection</span>
+        </div>
+      </div>
+
     </div>
   </section>
 
   <!-- ========= CERTIFICATIONS (UPDATED) ========= -->
   <section id="certifications">
-    <h2>Certifications</h2>
+    <h2 style="text-align: center; font-size: 2.5rem; font-weight: 900; margin-bottom: 1rem; background: linear-gradient(135deg, #fff 0%, #a78bfa 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Certifications & Achievements</h2>
+    <p style="text-align: center; color: var(--muted); font-size: 1.1rem; margin-bottom: 3rem;">Continuous Learning & Professional Development</p>
 
-    <!-- Core Technical Certifications -->
-    <div class="cert-card" style="margin-bottom:18px;">
-      <h3 style="margin-bottom:8px;">Core Technical Certifications</h3>
-      <ul>
-        <li>
-          <strong>AutoCAD — 8-Week Training (Internshala) — Top Performer</strong><br>
-          <a href="AutoCAD Training - Certificate of Completion.pdf" download>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); gap: 2rem; max-width: 1200px; margin: 0 auto;">
+      
+      <!-- Core Technical Certifications Card -->
+      <div class="cert-modern-card">
+        <div style="width: 60px; height: 60px; background: rgba(139, 92, 246, 0.2); border-radius: 15px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#8b5cf6" stroke-width="2">
+            <circle cx="12" cy="8" r="7"></circle>
+            <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+          </svg>
+        </div>
+        <h3 style="font-size: 1.5rem; margin-bottom: 1.5rem; font-weight: 700;">Core Technical Certifications</h3>
+        
+        <div style="margin-bottom: 1.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid rgba(255,255,255,0.1);">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+            <h4 style="font-size: 1.1rem; color: #8b5cf6; margin: 0; font-weight: 600;">AutoCAD Training</h4>
+            <span style="background: rgba(139,92,246,0.2); padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.85rem; color: #a78bfa; font-weight: 600;">Top Performer</span>
+          </div>
+          <p style="color: var(--muted); font-size: 0.9rem; margin: 0.5rem 0;">8-Week Training — Internshala</p>
+          <a href="AutoCAD Training - Certificate of Completion.pdf" download class="btn" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.6rem 1.2rem; font-size: 0.9rem; margin-top: 0.75rem;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+              <polyline points="7 10 12 15 17 10"></polyline>
+              <line x1="12" y1="15" x2="12" y2="3"></line>
+            </svg>
             Download Certificate
           </a>
-        </li>
-        <li style="margin-top:10px;">
-          <strong>STAAD Pro — 8-Week Training (Internshala)</strong><br>
-          <a href="STAAD Pro Training - Certificate of Completion.pdf" download>
+        </div>
+
+        <div>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+            <h4 style="font-size: 1.1rem; color: #8b5cf6; margin: 0; font-weight: 600;">STAAD Pro Training</h4>
+          </div>
+          <p style="color: var(--muted); font-size: 0.9rem; margin: 0.5rem 0;">8-Week Training — Internshala</p>
+          <a href="STAAD Pro Training - Certificate of Completion.pdf" download class="btn" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.6rem 1.2rem; font-size: 0.9rem; margin-top: 0.75rem;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+              <polyline points="7 10 12 15 17 10"></polyline>
+              <line x1="12" y1="15" x2="12" y2="3"></line>
+            </svg>
             Download Certificate
           </a>
-        </li>
-      </ul>
-    </div>
+        </div>
+      </div>
 
-    <!-- Workshops & Courses -->
-    <div class="cert-card">
-      <h3 style="margin-bottom:8px;">Workshops &amp; Courses</h3>
-      <ul>
-        <li>AutoCAD–2D Workshop — Learn Delta</li>
-        <li>Developing Soft Skills and Personality (NPTEL)</li>
-        <li>Enhancing Soft Skills and Personality (NPTEL)</li>
-      </ul>
+      <!-- Workshops & Courses Card -->
+      <div class="cert-modern-card">
+        <div style="width: 60px; height: 60px; background: rgba(139, 92, 246, 0.2); border-radius: 15px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#8b5cf6" stroke-width="2">
+            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+          </svg>
+        </div>
+        <h3 style="font-size: 1.5rem; margin-bottom: 1.5rem; font-weight: 700;">Workshops & Courses</h3>
+        
+        <div style="display: flex; flex-direction: column; gap: 1rem;">
+          <div style="display: flex; align-items: start; gap: 1rem;">
+            <div style="width: 24px; height: 24px; background: rgba(139,92,246,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#8b5cf6" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <div>
+              <h4 style="margin: 0; font-size: 1rem; font-weight: 600;">AutoCAD 2D Workshop</h4>
+              <p style="margin: 0.25rem 0 0 0; color: var(--muted); font-size: 0.9rem;">Learn Delta</p>
+            </div>
+          </div>
+
+          <div style="display: flex; align-items: start; gap: 1rem;">
+            <div style="width: 24px; height: 24px; background: rgba(139,92,246,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#8b5cf6" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <div>
+              <h4 style="margin: 0; font-size: 1rem; font-weight: 600;">Developing Soft Skills and Personality</h4>
+              <p style="margin: 0.25rem 0 0 0; color: var(--muted); font-size: 0.9rem;">NPTEL</p>
+            </div>
+          </div>
+
+          <div style="display: flex; align-items: start; gap: 1rem;">
+            <div style="width: 24px; height: 24px; background: rgba(139,92,246,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#8b5cf6" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <div>
+              <h4 style="margin: 0; font-size: 1rem; font-weight: 600;">Enhancing Soft Skills and Personality</h4>
+              <p style="margin: 0.25rem 0 0 0; color: var(--muted); font-size: 0.9rem;">NPTEL</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 
   <!-- ========= GATE 2025 ACHIEVEMENT ========= -->
   <section class="achievement-section">
-    <div class="achievement-panel">
-      <div class="ach-text">
-        <h4>Key Achievement: GATE 2025 Qualification</h4>
-        <h1 class="gate-title">GATE 2025<br>Qualified</h1>
-        <p>
+    <div style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 4rem; align-items: center; background: linear-gradient(135deg, rgba(30, 41, 59, 0.8) 0%, rgba(15, 20, 32, 0.9) 100%); border-radius: 30px; padding: 4rem; min-height: 400px; border: 1px solid rgba(255, 255, 255, 0.1); position: relative; overflow: hidden;">
+      
+      <!-- Background Decoration -->
+      <div style="position: absolute; top: -50%; right: -50%; width: 100%; height: 100%; background: radial-gradient(circle, rgba(236, 72, 153, 0.15) 0%, transparent 70%); pointer-events: none;"></div>
+      
+      <div style="position: relative; z-index: 2;">
+        <div style="display: inline-block; padding: 0.6rem 1.5rem; background: rgba(236, 72, 153, 0.2); border-radius: 50px; margin-bottom: 1.5rem; border: 1px solid rgba(236, 72, 153, 0.3);">
+          <span style="font-size: 0.95rem; font-weight: 600; color: #ec4899; display: flex; align-items: center; gap: 0.5rem;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+              <path d="M2 17l10 5 10-5M2 12l10 5 10-5"></path>
+            </svg>
+            Key Achievement
+          </span>
+        </div>
+        
+        <h2 style="font-size: 4rem; font-weight: 900; line-height: 1.1; margin-bottom: 1.5rem; background: linear-gradient(135deg, #fff 0%, #a78bfa 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
+          GATE 2025<br>Qualified
+        </h2>
+        
+        <p style="font-size: 1.05rem; line-height: 1.8; color: var(--muted); max-width: 600px;">
           Successfully qualified in the national-level Graduate Aptitude Test in
           Engineering (Civil Engineering), a critical benchmark for postgraduate
-          admissions in India and a testament to strong foundational knowledge.
+          admissions in India and a testament to strong foundational knowledge in
+          civil engineering fundamentals and problem-solving abilities.
         </p>
       </div>
-      <div class="ach-image-wrap">
-        <img src="gate-trophy.jpg" alt="GATE 2025 Trophy">
+      
+      <div style="display: flex; align-items: center; justify-content: center; position: relative; z-index: 2;">
+        <div style="position: relative; width: 100%; max-width: 450px;">
+          <img src="gate-trophy.jpg" alt="GATE 2025 Achievement" style="width: 100%; height: auto; border-radius: 20px; box-shadow: 0 25px 70px rgba(0, 0, 0, 0.6); filter: drop-shadow(0 0 30px rgba(236, 72, 153, 0.3));">
+        </div>
       </div>
     </div>
   </section>
 
   <!-- ========= CONTACT ========= -->
   <section id="contact">
-    <h2>Contact</h2>
-    <div class="contact-grid">
-      <div class="contact-box">
-        <h3>Information</h3>
-        <p>📍 Gorakhpur, Uttar Pradesh, India</p>
-        <p>📧 <a href="mailto:bkp0907@gmail.com">bkp0907@gmail.com</a></p>
-        <p>📱 <a href="tel:+916306629410">+91 6306629410</a></p>
-        <p>🔗 <a href="https://www.linkedin.com/in/bablu-kumar-patel-0b0b76241" target="_blank">
-          LinkedIn</a></p>
+    <h2 style="text-align: center; font-size: 2.5rem; font-weight: 900; margin-bottom: 1rem; background: linear-gradient(135deg, #fff 0%, #a78bfa 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Get In Touch</h2>
+    <p style="text-align: center; color: var(--muted); font-size: 1.1rem; margin-bottom: 3rem;">Let's Connect and Build Something Amazing</p>
+    
+    <div class="contact-grid" style="grid-template-columns: 1fr 1fr; gap: 3rem;">
+      <!-- Contact Info Cards -->
+      <div style="display: flex; flex-direction: column; gap: 2rem;">
+        <div class="contact-item">
+          <div class="contact-icon">
+            <i style="font-size: 1.8rem;">📧</i>
+          </div>
+          <div>
+            <h4 style="margin-bottom: 0.5rem; font-size: 1.1rem;">Email</h4>
+            <a href="mailto:bkp0907@gmail.com" style="color: var(--accent);">bkp0907@gmail.com</a>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <div class="contact-icon">
+            <i style="font-size: 1.8rem;">📱</i>
+          </div>
+          <div>
+            <h4 style="margin-bottom: 0.5rem; font-size: 1.1rem;">Phone</h4>
+            <a href="tel:+916306629410" style="color: var(--accent);">+91 6306629410</a>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <div class="contact-icon">
+            <i style="font-size: 1.8rem;">📍</i>
+          </div>
+          <div>
+            <h4 style="margin-bottom: 0.5rem; font-size: 1.1rem;">Location</h4>
+            <p style="margin: 0; color: var(--muted);">Gorakhpur, Uttar Pradesh, India</p>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <div class="contact-icon">
+            <i style="font-size: 1.8rem;">🔗</i>
+          </div>
+          <div>
+            <h4 style="margin-bottom: 0.5rem; font-size: 1.1rem;">LinkedIn</h4>
+            <a href="https://www.linkedin.com/in/bablu-kumar-patel-0b0b76241" target="_blank" style="color: var(--accent);">Connect with me</a>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <div class="contact-icon">
+            <i style="font-size: 1.8rem;">🌐</i>
+          </div>
+          <div>
+            <h4 style="margin-bottom: 0.5rem; font-size: 1.1rem;">Languages</h4>
+            <p style="margin: 0.25rem 0; color: var(--muted);">Hindi — Native</p>
+            <p style="margin: 0.25rem 0; color: var(--muted);">English — Fluent</p>
+          </div>
+        </div>
       </div>
-      <div class="contact-box">
-        <h3>Languages</h3>
-        <p>Hindi — Native proficiency</p>
-        <p>English — Fluent proficiency</p>
+
+      <!-- Contact Form -->
+      <div class="contact-form">
+        <h3 style="margin-bottom: 2rem; font-size: 1.5rem;">Send a Message</h3>
+        <form action="https://formsubmit.co/bkp0907@gmail.com" method="POST">
+          <!-- FormSubmit Configuration -->
+          <input type="hidden" name="_subject" value="New Portfolio Contact Message!">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_next" value="https://bablu-kumar-patel.github.io/portfolio/#contact">
+          <input type="text" name="_honey" style="display:none">
+          
+          <div class="form-group">
+            <label style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Name</label>
+            <input type="text" name="name" placeholder="Your Name" required style="width: 100%; padding: 1rem; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 10px; color: var(--text); font-family: inherit; font-size: 0.95rem;">
+          </div>
+          <div class="form-group" style="margin-top: 1.5rem;">
+            <label style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Email</label>
+            <input type="email" name="email" placeholder="your.email@example.com" required style="width: 100%; padding: 1rem; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 10px; color: var(--text); font-family: inherit; font-size: 0.95rem;">
+          </div>
+          <div class="form-group" style="margin-top: 1.5rem;">
+            <label style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Message</label>
+            <textarea name="message" placeholder="Your message..." required style="width: 100%; padding: 1rem; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 10px; color: var(--text); font-family: inherit; resize: vertical; min-height: 150px; font-size: 0.95rem;"></textarea>
+          </div>
+          <button type="submit" class="btn" style="width: 100%; margin-top: 1.5rem; padding: 1rem; font-size: 1rem; cursor: pointer; border: none; transition: all 0.3s ease;">
+            📤 Send Message
+          </button>
+        </form>
       </div>
     </div>
   </section>
 
   <footer>
-    © 2025 Bablu Kumar Patel — Portfolio
+    <p>© 2025 Bablu Kumar Patel. All rights reserved.</p>
+    <p style="margin-top: 8px;">Built with passion for Civil Engineering & Transportation</p>
   </footer>
 
 </div>
+
+<!-- ============ JAVASCRIPT FOR ANIMATED BACKGROUND - NEW ============ -->
+<script>
+  // ========== CANVAS BACKGROUND ==========
+  const canvas = document.getElementById('canvas-bg');
+  const ctx = canvas.getContext('2d');
+
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+
+  class Particle {
+    constructor() {
+      this.x = Math.random() * canvas.width;
+      this.y = Math.random() * canvas.height;
+      this.size = Math.random() * 2 + 1;
+      this.speedX = Math.random() * 0.5 - 0.25;
+      this.speedY = Math.random() * 0.5 - 0.25;
+    }
+
+    update() {
+      this.x += this.speedX;
+      this.y += this.speedY;
+
+      if (this.x > canvas.width || this.x < 0) this.speedX *= -1;
+      if (this.y > canvas.height || this.y < 0) this.speedY *= -1;
+    }
+
+    draw() {
+      ctx.fillStyle = 'rgba(37, 117, 252, 0.5)';
+      ctx.beginPath();
+      ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+      ctx.fill();
+    }
+  }
+
+  const particles = [];
+  for (let i = 0; i < 80; i++) {
+    particles.push(new Particle());
+  }
+
+  function connectParticles() {
+    for (let i = 0; i < particles.length; i++) {
+      for (let j = i + 1; j < particles.length; j++) {
+        const dx = particles[i].x - particles[j].x;
+        const dy = particles[i].y - particles[j].y;
+        const distance = Math.sqrt(dx * dx + dy * dy);
+
+        if (distance < 100) {
+          ctx.strokeStyle = `rgba(37, 117, 252, ${1 - distance / 100})`;
+          ctx.lineWidth = 0.5;
+          ctx.beginPath();
+          ctx.moveTo(particles[i].x, particles[i].y);
+          ctx.lineTo(particles[j].x, particles[j].y);
+          ctx.stroke();
+        }
+      }
+    }
+  }
+
+  function animate() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    
+    particles.forEach(particle => {
+      particle.update();
+      particle.draw();
+    });
+
+    connectParticles();
+    requestAnimationFrame(animate);
+  }
+
+  animate();
+
+  window.addEventListener('resize', () => {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  });
+
+  // ========== TYPING EFFECT ==========
+  const texts = [
+    'Civil Engineer',
+    'GATE 2025 Qualified',
+    'Transportation Engineer'
+  ];
+
+  let textIndex = 0;
+  let charIndex = 0;
+  let isDeleting = false;
+  const typingElement = document.getElementById('typingText');
+
+  function type() {
+    const currentText = texts[textIndex];
+    
+    if (isDeleting) {
+      typingElement.textContent = currentText.substring(0, charIndex - 1);
+      charIndex--;
+    } else {
+      typingElement.textContent = currentText.substring(0, charIndex + 1);
+      charIndex++;
+    }
+
+    let typeSpeed = isDeleting ? 50 : 100;
+
+    if (!isDeleting && charIndex === currentText.length) {
+      typeSpeed = 2000;
+      isDeleting = true;
+    } else if (isDeleting && charIndex === 0) {
+      isDeleting = false;
+      textIndex = (textIndex + 1) % texts.length;
+      typeSpeed = 500;
+    }
+
+    setTimeout(type, typeSpeed);
+  }
+
+  type();
+</script>
+<!-- ============ END OF NEW JAVASCRIPT ============ -->
+
 </body>
 </html>
