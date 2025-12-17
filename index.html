@@ -1870,6 +1870,121 @@
   }
 
   type();
+  
+  // ========== DOWNLOAD HANDLER WITH FEEDBACK ==========
+  document.addEventListener('DOMContentLoaded', function() {
+    // Track which files are currently downloading
+    const downloadingFiles = new Set();
+    
+    // Get all download links
+    const downloadLinks = document.querySelectorAll('a[download]');
+    
+    downloadLinks.forEach(link => {
+      link.addEventListener('click', function(e) {
+        const fileName = this.getAttribute('href');
+        
+        // Prevent double download if already downloading
+        if (downloadingFiles.has(fileName)) {
+          e.preventDefault();
+          showNotification('Download already in progress...', 'info');
+          return;
+        }
+        
+        // Add to downloading set
+        downloadingFiles.add(fileName);
+        
+        // Show downloading notification
+        showNotification('Download started...', 'success');
+        
+        // Change button text temporarily
+        const originalText = this.innerHTML;
+        const originalPointerEvents = this.style.pointerEvents;
+        this.innerHTML = '⬇️ Downloading...';
+        this.style.pointerEvents = 'none';
+        this.style.opacity = '0.7';
+        
+        // Reset after download completes (3 seconds)
+        setTimeout(() => {
+          downloadingFiles.delete(fileName);
+          this.innerHTML = originalText;
+          this.style.pointerEvents = originalPointerEvents;
+          this.style.opacity = '1';
+          showNotification('Download complete!', 'success');
+        }, 3000);
+      });
+    });
+  });
+  
+  // Notification function
+  function showNotification(message, type = 'info') {
+    // Remove existing notification if any
+    const existing = document.getElementById('download-notification');
+    if (existing) {
+      existing.remove();
+    }
+    
+    // Create notification element
+    const notification = document.createElement('div');
+    notification.id = 'download-notification';
+    notification.textContent = message;
+    
+    // Style based on type
+    const colors = {
+      success: '#10b981',
+      info: '#3b82f6',
+      error: '#ef4444'
+    };
+    
+    notification.style.cssText = `
+      position: fixed;
+      top: 100px;
+      right: 20px;
+      background: ${colors[type] || colors.info};
+      color: white;
+      padding: 1rem 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      z-index: 10000;
+      font-size: 0.95rem;
+      font-weight: 600;
+      animation: slideIn 0.3s ease-out;
+      max-width: 300px;
+    `;
+    
+    // Add animation
+    const style = document.createElement('style');
+    style.textContent = `
+      @keyframes slideIn {
+        from {
+          transform: translateX(400px);
+          opacity: 0;
+        }
+        to {
+          transform: translateX(0);
+          opacity: 1;
+        }
+      }
+      @keyframes slideOut {
+        from {
+          transform: translateX(0);
+          opacity: 1;
+        }
+        to {
+          transform: translateX(400px);
+          opacity: 0;
+        }
+      }
+    `;
+    document.head.appendChild(style);
+    
+    document.body.appendChild(notification);
+    
+    // Auto remove after 3 seconds
+    setTimeout(() => {
+      notification.style.animation = 'slideOut 0.3s ease-out';
+      setTimeout(() => notification.remove(), 300);
+    }, 3000);
+  }
 </script>
 <!-- ============ END OF NEW JAVASCRIPT ============ -->
 
