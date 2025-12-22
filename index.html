@@ -1721,12 +1721,11 @@
       <!-- Contact Form -->
       <div class="contact-form">
         <h3 style="margin-bottom: 2rem; font-size: 1.5rem;">Send a Message</h3>
-        <form action="https://formsubmit.co/bkp0907@gmail.com" method="POST">
+        <form id="contactForm" action="https://formsubmit.co/bkp0907@gmail.com" method="POST">
           <!-- FormSubmit Configuration -->
           <input type="hidden" name="_subject" value="New Portfolio Contact Message!">
           <input type="hidden" name="_captcha" value="false">
           <input type="hidden" name="_template" value="table">
-          <input type="hidden" name="_next" value="https://bablu-kumar-patel.github.io/portfolio/#contact">
           <input type="text" name="_honey" style="display:none">
           
           <div class="form-group">
@@ -1986,6 +1985,50 @@
       setTimeout(() => notification.remove(), 300);
     }, 3000);
   }
+  
+  // ========== CONTACT FORM HANDLER ==========
+  document.addEventListener('DOMContentLoaded', function() {
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+      contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const submitButton = this.querySelector('button[type="submit"]');
+        const originalText = submitButton.innerHTML;
+        
+        // Disable button and show sending state
+        submitButton.disabled = true;
+        submitButton.innerHTML = '📤 Sending...';
+        submitButton.style.opacity = '0.7';
+        
+        // Submit form via fetch
+        fetch(this.action, {
+          method: 'POST',
+          body: new FormData(this),
+          headers: {
+            'Accept': 'application/json'
+          }
+        })
+        .then(response => {
+          if (response.ok) {
+            showNotification('✅ Message sent successfully!', 'success');
+            this.reset(); // Clear form
+          } else {
+            showNotification('❌ Failed to send. Please try again.', 'error');
+          }
+        })
+        .catch(error => {
+          showNotification('❌ Network error. Please try again.', 'error');
+        })
+        .finally(() => {
+          // Re-enable button
+          submitButton.disabled = false;
+          submitButton.innerHTML = originalText;
+          submitButton.style.opacity = '1';
+        });
+      });
+    }
+  });
 </script>
 <!-- ============ END OF NEW JAVASCRIPT ============ -->
 
