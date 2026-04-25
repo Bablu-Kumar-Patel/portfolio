@@ -296,33 +296,73 @@
     .project-img{
       background:var(--card);
       border-radius:var(--radius);
-      padding:22px;
+      overflow:hidden;
       display:flex;
       flex-direction:column;
-      align-items:center;
-      justify-content:center;
-      gap:8px;
+      height:100%;
+      box-sizing:border-box;
     }
 
+    /* cover images (photos) – padded with border-radius like project 1 */
     .project-img-inner{
       width:100%;
-      max-width:480px;
-      border-radius:18px;
-      overflow:hidden;           /* ensure rounded corners apply */
+      flex:1;
+      min-height:260px;
+      overflow:hidden;
+      padding:12px;
+      box-sizing:border-box;
+      display:flex;
+      align-items:center;
+      justify-content:center;
     }
 
     .project-img-inner img{
       width:100%;
-      height:auto;
+      height:100%;
       object-fit:cover;
       display:block;
-      border-radius:18px;         /* smooth corners like the card */
+      border-radius:12px;
+    }
+
+    /* diagram/chart images – full image visible, parent overflow:hidden clips to rounded card */
+    /* ALL project images — padded inside card with own border-radius, exactly like project 1 */
+    .project-img-inner.diagram-img,
+    .project-img-inner.diagram-img.dark-fill {
+      width: 100%;
+      flex: 1;
+      min-height: 260px;
+      overflow: hidden;
+      padding: 12px;
+      box-sizing: border-box;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: transparent;
+    }
+
+    /* white-bg charts: cover to fill the frame, no white gaps */
+    .project-img-inner.diagram-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+      border-radius: 12px;
+      filter: none;
+    }
+
+    /* dark-bg images: cover to fill like project 1 */
+    .project-img-inner.diagram-img.dark-fill img {
+      object-fit: cover;
+      filter: none;
     }
 
     .graph-caption{
-      font-size:0.9rem;
+      font-size:0.85rem;
       text-align:center;
       color:var(--muted);
+      padding:10px 14px 14px;
+      flex-shrink:0;
     }
 
     /* ---------- CORE COMPETENCIES ---------- */
@@ -1341,7 +1381,7 @@
   <h2 style="text-align: center; font-size: 2.5rem; font-weight: 900; margin-bottom: 1rem; background: linear-gradient(135deg, #fff 0%, #a78bfa 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Featured Projects</h2>
   <p style="text-align: center; color: var(--muted); font-size: 1.1rem; margin-bottom: 3rem;">Research & Development in Transportation Engineering</p>
 
-  <!-- Existing B.Tech Project -->
+  <!-- Project 1: B.Tech ML Marshall Stability -->
   <div class="project" style="margin-bottom:22px;">
     <div class="project-text">
       <h3>ML-Based Prediction of Marshall Stability</h3>
@@ -1359,7 +1399,7 @@
         using waste-modified asphalt mixtures.</p>
     </div>
     <div class="project-img">
-      <div class="project-img-inner">
+      <div class="project-img-inner diagram-img dark-fill">
         <img src="project-graph.jpg" alt="Predicted vs Actual Marshall Stability">
       </div>
       <p class="graph-caption">
@@ -1368,8 +1408,8 @@
     </div>
   </div>
 
-  <!-- NEW Trip Generation Project -->
-  <div class="project">
+  <!-- Project 2: Trip Generation Modeling -->
+  <div class="project" style="margin-bottom:22px;">
     <div class="project-text">
       <h3>Trip Generation Modeling: Neural Networks vs Linear Regression</h3>
       <p class="muted">
@@ -1393,7 +1433,7 @@
     </div>
 
     <div class="project-img">
-      <div class="project-img-inner">
+      <div class="project-img-inner diagram-img">
         <img src="Normalized_Importance_of_Variable.jpg" alt="Normalized Importance of Variables">
       </div>
       <p class="graph-caption">
@@ -1401,6 +1441,61 @@
       </p>
     </div>
   </div>
+
+  <!-- Project 3: Safety Analysis of Median Opening — NIT Warangal 2nd Gate -->
+  <div class="project" style="margin-bottom:22px;">
+    <div class="project-text">
+      <h3>Safety Analysis of a Median Opening on a Horizontal Curve at NIT Warangal 2nd Gate</h3>
+      <p class="muted">
+        Minor Project – Transportation Engineering, NIT Warangal (2025–2026). Field-based traffic
+        safety study on NH-163 examining the combined effect of horizontal curvature, median opening
+        geometry, and mixed traffic behavior on road safety.
+      </p>
+      <ul class="muted">
+        <li>Analyzed Stopping Sight Distance on NH-163, finding available SSD (25 m) critically below required threshold, posing high collision risk.</li>
+        <li>Quantified gap acceptance behavior: 38.6% of two-wheelers and 25% of cars merged unsafely below critical gap thresholds of 2.5 s and 3.5 s respectively.</li>
+        <li>Identified conflict-prone forced-merging patterns under mixed traffic conditions at a complex median opening.</li>
+        <li>Proposed geometric and traffic management improvements to reduce conflict points on a national highway.</li>
+      </ul>
+      <p class="muted"><strong>Outcome:</strong> Provided evidence-based recommendations for geometric redesign and signage improvements to enhance safety at the study site.</p>
+    </div>
+    <div class="project-img">
+      <div class="project-img-inner diagram-img dark-fill">
+        <img src="median_opening_nh163.png" alt="Median Opening Geometry NH-163">
+      </div>
+      <p class="graph-caption">
+        Proposed storage lane geometry at NH-163 median opening — 10 m opening width with 1.8 m nose and 0.5 m kerb, providing dedicated deceleration space for turning vehicles on a 9 m carriageway.
+      </p>
+    </div>
+  </div>
+
+  <!-- Project 4: Advanced Travel Demand Modelling -->
+  <div class="project">
+    <div class="project-text">
+      <h3>Advanced Travel Demand Modelling: Activity-Based Study at NIT Warangal</h3>
+      <p class="muted">
+        Minor Project – Transportation Engineering, NIT Warangal (2025–2026). Comparative
+        analysis of mode choice and activity patterns using discrete choice models on
+        144 campus respondents.
+      </p>
+      <ul class="muted">
+        <li>Conducted activity-based travel demand study analyzing 285 person-day chains; complex Work/Study chains were the most dominant pattern (35.79%), with complex chains constituting 81.4% of all observed chains.</li>
+        <li>Quantified mode share: walking (56.9%) and cycling (22.9%) accounted for ~80% of all trips; identified residential proximity as the primary mode choice determinant.</li>
+        <li>Estimated and compared Nested Logit, Full MNL, and Restricted MNL models; Restricted MNL identified as best-fit (AIC: 2043.86, Hit Rate: 62.69%).</li>
+        <li>Proposed evidence-based policy recommendations for enhanced pedestrian infrastructure and campus cycling facilities.</li>
+      </ul>
+      <p class="muted"><strong>Outcome:</strong> Delivered actionable policy insights to promote sustainable non-motorised mobility on the NIT Warangal campus.</p>
+    </div>
+    <div class="project-img">
+      <div class="project-img-inner diagram-img">
+        <img src="restricted_mnl_model_results.png" alt="Restricted MNL Model Results">
+      </div>
+      <p class="graph-caption">
+        Model 1 (Restricted MNL) — Observed vs Predicted shares, Beta Coefficients &amp; Model Fit Summary.
+      </p>
+    </div>
+  </div>
+
 </section>
 
 
